@@ -1,0 +1,41 @@
+<h2>AngularJS Example - Expanding Details Row</h2>
+<h4>via <a href="">RandomUser.me</a> API + <a href="http://www.bootply.com/ffa8qGvfNj">Bootply</a></h4>
+<hr>
+<i ng-if="showUsers == false" class="fa fa-spin fa-refresh fa-5x" id="loader"></i>
+<div ng-if="showUsers" id="userList">
+  <div class="row" ng-repeat-start="u in users" ng-click="showDetail(u.user)" ng-class-odd="'alt'">
+    <div class="col-xs-1 text-center"><img title="{{u.user.name.first}}" src="{{u.user.picture}}" class="img-thumbnail img-responsive img-circle"></div> 
+    <div class="col-xs-3 cap">{{u.user.name.first}}</div>
+    <div class="col-xs-2 strong">{{u.user.username}}</div>
+    <div class="col-xs-2">{{u.user.phone}}</div>
+    <div class="col-xs-2">{{u.user.location.state}}</div> 
+    <div class="col-xs-2 text-right"><a href=""><i ng-hide="active==u.user.username" class="fa fa-plus fa-3x"></i><i ng-show="active==u.user.username" class="fa fa-minus fa-3x"></i></a></div>
+  </div>
+  <div class="row" ng-repeat-end="" ng-show="active==u.user.username" ng-class-odd="'alt'">
+
+        <div class="col-xs-12"><h2 class="cap">{{u.user.name.first}} <i ng-show="u.user.gender=='female'" class="fa fa-female"></i><i ng-show="u.user.gender=='male'" class="fa fa-male"></i></h2></div>
+        <div class="col-md-3 col-xs-6 small">
+          <label>Username</label> {{u.user.username}}<br>
+          <label>Registered</label> {{u.user.registered | date:'MM/dd/yyyy'}}<br>
+          <label>Email</label> {{u.user.email}}
+        </div>
+        <div class="col-md-3 col-xs-6 small">
+          <label>Address</label> {{u.user.location.street}}<br>
+          <label>City</label> {{u.user.location.city}}<br>
+          <label>Zip Code</label> {{u.user.location.zip}}<br>
+        </div>
+        <div class="col-md-3 col-xs-6 small">
+          <label>Birthday</label> {{u.user.dob | date:'MM/dd/yyyy'}}<br>
+          <label>Phone</label> {{u.user.phone}}<br>
+          <label>Cell</label> {{u.user.cell}}<br>
+        </div>
+        <div class="col-md-2 col-xs-12 text-center">
+          <img title="{{u.user.name.first}}" src="{{u.user.picture}}" class="img-thumbnail img-responsive img-circle center-block">
+        </div>
+        <div class="col-xs-12"><hr></div>
+
+  </div>
+
+</div><!--/row-->
+
+<hr>

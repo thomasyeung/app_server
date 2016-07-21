@@ -1,0 +1,29 @@
+<h1 align="center">Dashboard</h1>
+
+<div ng-if="showCharts">
+
+    <div class="row">
+      <div class="col-md-6">
+        <canvas tc-chartjs-doughnut chart-options="options" chart-data="data" auto-legend></canvas>  
+      </div>
+      <div class="col-md-6">
+        <canvas tc-chartjs-pie chart-options="options" chart-data="pieData" auto-legend></canvas>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <canvas tc-chartjs-bar chart-options="options" chart-data="barData" auto-legend></canvas> 
+      </div>
+      <div class="col-md-6">
+        <canvas tc-chartjs-line chart-options="options" chart-data="lineData" auto-legend></canvas>  
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <canvas tc-chartjs-polararea chart-options="options" chart-data="polarData" auto-legend></canvas>
+      </div>
+    </div>
+    
+</div>
